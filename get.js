@@ -2,7 +2,7 @@ export default (object, path, defaultVal) => {
 
     if (typeof path !== 'array') {
         if (isKey(path, object)) {
-            path = path[0];
+            path = [path];
         } else {
             path = path == null ? '' : stringToPath(toString(path));
         }

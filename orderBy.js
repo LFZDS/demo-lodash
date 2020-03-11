@@ -10,7 +10,7 @@ export default (collection, iteratees, orders) => {
         const criteria = map(iteratees, iteratee => {
             return value[iteratee];
         });
-    
+
         return {
             criteria: criteria,
             index: ++i,
@@ -34,7 +34,7 @@ export default (collection, iteratees, orders) => {
                 return orders[i] === 'desc' ? -flag : flag;
             }
         }
-        return next.index - next.pre;
+        return next.index - pre.next;
     });
     return map(sortData, item => {
         return item.value;
